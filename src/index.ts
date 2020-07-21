@@ -8,21 +8,13 @@ import routes from './routes';
 
 mongoose.Promise = global.Promise;
 
-declare var process : {
-    env: {
-        TIMES: number,
-        NODE_ENV: string,
-        DATABASE_URL: string
-    }
-}
-
 // initialize configuration
 dotenv.config();
 
 // port is now available to the Node.js runtime
 // as if it were an environment variable
-const port = 5000
-const dburl = process.env.DATABASE_URL;
+const port = process.env.PORT || 5000
+const dburl = "mongodb+srv://admin:oQPCCoaopX7vkdEo@cluster0.t5rl5.mongodb.net/MongoLABDB?retryWrites=true&w=majority";
 
 const app = express();
 app.use(bodyParser.json());
