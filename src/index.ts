@@ -14,7 +14,7 @@ dotenv.config();
 // port is now available to the Node.js runtime
 // as if it were an environment variable
 const port = process.env.PORT || 5000
-const dburl = process.env["DATABASE_URL"];
+const dburl: string = (process.env.DATABASE_URL as string);
 
 const app = express();
 app.use(bodyParser.json());
