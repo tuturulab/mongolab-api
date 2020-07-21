@@ -8,13 +8,21 @@ import routes from './routes';
 
 mongoose.Promise = global.Promise;
 
+declare var process : {
+    env: {
+        TIMES: number,
+        NODE_ENV: string,
+        DATABASE_URL: string
+    }
+}
+
 // initialize configuration
 dotenv.config();
 
 // port is now available to the Node.js runtime
 // as if it were an environment variable
-const port = process.env.PORT || 5000
-const dburl: string = (process.env.DATABASE_URL as string);
+const port = 5000
+const dburl = process.env.DATABASE_URL;
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,6 +36,8 @@ app.get("/", ( req, res ) => {
     res.render("index");
 });
 app.use('/', routes);
+
+
 
 mongoose.connect(dburl, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     // start the express server
