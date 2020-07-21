@@ -14,7 +14,7 @@ dotenv.config();
 // port is now available to the Node.js runtime
 // as if it were an environment variable
 const port = process.env.PORT || 5000
-const dburl = "mongodb+srv://admin:oQPCCoaopX7vkdEo@cluster0.t5rl5.mongodb.net/MongoLABDB?retryWrites=true&w=majority";
+const dburl = process.env.DATABASE_URL;
 
 const app = express();
 app.use(bodyParser.json());
