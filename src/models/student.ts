@@ -16,4 +16,4 @@ const schema: Schema = new Schema({
   Profesion: { type: String }
 });
 
-export default mongoose.model<IStudents>("ClaseMongoDB", schema);
+export default mongoose.model<IStudents>("Students", schema);
