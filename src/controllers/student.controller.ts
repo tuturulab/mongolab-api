@@ -1,7 +1,7 @@
 import Students, { IStudents } from "../models/student";
 import { Request, Response } from "express";
 
-function createStudent(req: Request, res: Response) {}
+// function createStudent(req: Request, res: Response) {}
 
 function getStudents(req: Request, res: Response) {
   Students.find({}).then((docs: IStudents[]) => {
@@ -9,4 +9,4 @@ function getStudents(req: Request, res: Response) {
   });
 }
 
-export default { createStudent, getStudents };
+export default {  getStudents };
