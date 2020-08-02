@@ -1,10 +1,12 @@
-import Student, { IStudents } from "../models/student";
-import { Response } from "express";
+import Students, { IStudents } from "../models/student";
+import { Request, Response } from "express";
+
+function createStudent(req: Request, res: Response) {}
 
 function getStudents(req: Request, res: Response) {
-  Student.find({}).then((docs: IStudents[]) => {
+  Students.find({}).then((docs: IStudents[]) => {
     res.status(200).json(docs);
   });
 }
 
-export default { getStudents };
+export default { createStudent, getStudents };

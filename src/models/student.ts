@@ -8,12 +8,12 @@ export interface IStudents extends Document {
   Profesion: string;
 }
 
-const schema: Schema = new Schema({
+const Studentschema: Schema = new Schema({
   FechaCreacion: { type: Date },
   NombreApellido: { type: String },
   CorreoElectronico: { type: String },
   Sexo: { type: String },
-  Profesion: { type: String }
+  Profesion: { type: String },
 });
 
-export default mongoose.model<IStudents>("Students", schema);
+export default mongoose.model<IStudents>("students", Studentschema);
