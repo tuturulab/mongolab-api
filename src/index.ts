@@ -28,6 +28,9 @@ app.get("/", (req, res) => {
   // render the index template
   res.render("index");
 });
+app.post("/", (req, res) => {
+  res.render("index");
+});
 app.use("/", routes);
 
 mongoose
